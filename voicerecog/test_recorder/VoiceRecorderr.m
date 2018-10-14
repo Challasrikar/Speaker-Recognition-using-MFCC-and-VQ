@@ -1,0 +1,11 @@
+disp('enter speaker no');
+i=input('');
+file = sprintf('s%d.wav',i);
+input('press enter when ready');
+y = audiorecorder(12500,8,1);
+record(y);
+pause(1);
+stop(y);
+y = getaudiodata(y);
+sound(y,12500);
+audiowrite(file,y,12500);
